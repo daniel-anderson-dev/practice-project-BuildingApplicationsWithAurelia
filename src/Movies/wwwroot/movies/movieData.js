@@ -2,7 +2,7 @@
 import {HttpClient} from 'aurelia-http-client'
 
 // Pointing to a JSON data file for the sake of following instructions.
-let baseUrl = '/movies.json';
+let baseUrl = './miscellaneous/movies.json';
 
 @inject(HttpClient)
 export class MovieData
