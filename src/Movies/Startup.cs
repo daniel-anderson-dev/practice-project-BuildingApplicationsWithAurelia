@@ -36,7 +36,7 @@ namespace Movies
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddMvc();
+            //services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,13 +60,18 @@ namespace Movies
             app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
-
-            app.UseMvc(routes =>
+            app.UseFileServer(new FileServerOptions
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                EnableDefaultFiles = true,
+                EnableDirectoryBrowsing = false
             });
+
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
         }
     }
 }

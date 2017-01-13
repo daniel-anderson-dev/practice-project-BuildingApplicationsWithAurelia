@@ -1,3 +1,6 @@
-﻿import {sayHello} from 'greeter';
-
-sayHello();
+﻿export class App {
+    constructor()
+    {
+        this.message = 'Hello from Aurelia.';
+    }
+}
