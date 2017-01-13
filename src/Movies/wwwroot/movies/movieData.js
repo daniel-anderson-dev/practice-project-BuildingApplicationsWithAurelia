@@ -12,6 +12,15 @@ export class MovieData
         this.http = httpClient;
     }
 
+    getById(id)
+    {
+        // Not using a real API, so I will exploit the ID to return the desired
+        //  object from the array of json data objects.
+        //  It's a hack.
+        return this.http.get(baseUrl)
+                        .then(response => response.content[id-1]);
+    }
+
     getAll()
     {
         return this.http.get(baseUrl)
