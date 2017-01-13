@@ -1,5 +1,25 @@
 ﻿<template>
     <div>${message}</div>
     <button click.trigger="changeMessage()">Change Message</button>
+
+    <hr />
+
+    <div>You have ${movies.length} movies.</div>
+
+    <hr />
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+        </tr>
+        <tr repeat.for="movie of movies">
+            <td>${movie.title}</td>
+            <td>${movie.releaseYear}</td>
+        </tr>
+    </table>
+
+    <hr />
+
     <compose view-model="currentDate"></compose>
 </template>
