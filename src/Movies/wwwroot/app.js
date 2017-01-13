@@ -1,15 +1,12 @@
-﻿import {HttpClient} from 'aurelia-http-client';
+﻿import {inject} from 'aurelia-framework';
+import {HttpClient} from 'aurelia-http-client';
 
+@inject(HttpClient)
 export class App {
     constructor(httpClient)
     {
         this.message = '';
         this.http = httpClient;
-    }
-
-    static inject()
-    {
-        return [HttpClient];
     }
 
     activate()
