@@ -28,4 +28,10 @@ export class MovieData
                                return response.content;
                            });
     }
+
+    save(movie)
+    {
+        console.log('Saved the movie...');
+        return this.getById(movie.id);
+    }
 }
