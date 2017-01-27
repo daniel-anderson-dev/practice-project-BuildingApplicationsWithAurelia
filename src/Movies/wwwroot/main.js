@@ -2,7 +2,8 @@
 {
     aurelia.use
             .standardConfiguration()
-            .developmentLogging();
+            .developmentLogging()
+            .plugin('./resources/index');
 
     aurelia.start().then(a => a.setRoot());
 };
